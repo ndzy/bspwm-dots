@@ -1,0 +1,82 @@
+# ПЕРЕЗАПУСК УТИЛИТЫ
+super + Escape
+	pkill -USR1 -x sxhkd
+
+
+################
+#     СОФТ     #
+################
+
+
+# ТЕРМИНАЛ
+super + q
+	kitty
+
+# ФАЙЛОВОЙ МЕНЕДЖЕР
+super + e
+  thunar
+
+# МЕНЮ ПРИЛОЖЕНИЙ
+super + r
+	rofi -show drun
+
+# БРАУЗЕР
+super + b
+	firefox
+
+# TELEGRAM
+super + t
+  telegram-desktop
+
+# СКРИНЫ БЛЯ
+super + shift + s
+	flameshot gui -c
+
+# ЭКРАН БЛОКИРОВКИ
+super + l
+	betterlockscreen -l blur  
+
+# БУФЕР ОБМЕНА
+super + v
+  cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+################
+# BSPWM ХОТКЕИ #
+################
+
+
+#ВЫХОД ИЗ BSPWM
+super + m
+	bspc {quit}
+
+
+# ПЕРЕЗАПУСК BSPWM
+super + alt + r	
+	bspc {wm -r}
+
+
+# ЗАКРЫТИЕ ОКНА
+super + {_,shift + }c
+	bspc node -{c,k}
+
+
+# СОСТОЯНИЕ ОКНА ( плавающее, фуллскрин, нормальное)
+super + {d,shift + d,f,s}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+
+# ПЕРЕКЛЮЧЕНИЕ ФОКУСА И ПЕРЕМЕЩЕНИЕ ОКНА
+super + {_,shift + }{Left,Down,Up,Right}}
+	bspc node -{f,s} {west,south,north,east}
+
+
+# ПЕРЕКЛЮЧЕНИЕ ИЛИ ПЕРЕМЕЩЕНИЕ ОКНА НА ВОРКСПЕЙС
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+
+# ПЕРЕДВИЖЕНИЕ ПЛАВАЮЩЕГО ОКНА
+super + {Left,Down,Up,Right}
+	bspc node -v {-60 0,0 20,0 -60,60 0}
+
+#меня ебали пять негров
