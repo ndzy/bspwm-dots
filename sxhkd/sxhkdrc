@@ -28,7 +28,7 @@ super + b
 super + t
   telegram-desktop
 
-# СКРИНЫ БЛЯ
+# СКРИНШОТЫ
 super + shift + s
 	flameshot gui -c
 
@@ -79,4 +79,3 @@ super + {_,shift + }{1-9,0}
 super + {Left,Down,Up,Right}
 	bspc node -v {-60 0,0 20,0 -60,60 0}
 
-#меня ебали пять негров
